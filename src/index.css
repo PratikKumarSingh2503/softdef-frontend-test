@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower:wght@300;400;500;700;900&family=Inter:wght@300;500;900&family=Merienda:wght@400;700&family=Merienda+One:wght@400;700&family=Montserrat:wght@400;700&family=Nunito:wght@400;700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-flora-bg: #1B2316;
+  /* --color-flora-surface: #111d16; */
+  --color-flora-soft: #18261c;
+  --color-card: #111d16;
+  --color-flora-accent: #c8ff4f;
+  --color-flora-accent-soft: #99cc3c;
+  --color-flora-text: #FFFFFF;
+  --color-flora-muted: #b3c0b3;
+  --shadow-flora-card: 0 24px 60px rgba(0, 0, 0, 0.7);
+  --font-indie: 'Indie Flower', sans-serif;
+  /* --font-inter: 'Inter', sans-serif; */
+}
+
+.swiper,
+.swiper-wrapper,
+.swiper-slide {
+  overflow: visible !important;
+}
+
+/* Inactive dots — small white circles */
+.o2-pagination .swiper-pagination-bullet {
+  background: #ffffff !important;
+  width: 6px !important;
+  height: 6px !important;
+  opacity: 0.5 !important;   /* slight fade for inactive */
+  border-radius: 999px !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Active dot — long white pill */
+.o2-pagination .swiper-pagination-bullet-active {
+  background: #ffffff !important;
+  width: 26px !important;     /* wider */
+  height: 6px !important;
+  opacity: 1 !important;
+  border-radius: 999px !important;
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    background-color: var(--color-flora-bg);
+    color: var(--color-flora-text);
+    font-family: 'Inter', sans-serif;
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+}
