@@ -23,7 +23,7 @@ A modern, responsive plant e-commerce website built with React and Vite. This pr
 - **Customer Testimonials**: Social proof with customer reviews
 - **O2 Plants Section**: Special section for air-purifying plants
 - **Modern UI**: Built with Tailwind CSS for a sleek, modern interface
-- **Interactive Carousels**: Smooth carousel components using Swiper and Embla Carousel
+- **Interactive Carousels**: Smooth carousel components using Swiper
 - **React Icons**: Beautiful iconography throughout the application
 
 ## 🛠 Tech Stack
@@ -32,7 +32,6 @@ A modern, responsive plant e-commerce website built with React and Vite. This pr
 - **Vite 7.2.2** - Build tool and dev server
 - **Tailwind CSS 4.1.17** - Utility-first CSS framework
 - **Swiper 12.0.3** - Modern touch slider
-- **Embla Carousel** - Lightweight carousel library
 - **React Icons 5.5.0** - Popular icons library
 - **ESLint** - Code linting and quality
 
@@ -147,7 +146,6 @@ clientCopy/
 │   │   ├── Button.jsx
 │   │   └── SectionTitle.jsx
 │   ├── App.jsx          # Main App component
-│   ├── App.css          # App-specific styles
 │   ├── main.jsx         # Application entry point
 │   └── index.css        # Global styles
 ├── dist/                # Production build output (generated)
@@ -187,7 +185,6 @@ Runs ESLint to check for code quality issues and potential errors in your codeba
 
 ### UI Components & Libraries
 - **Swiper 12.0.3**: Modern, touch-enabled slider/carousel
-- **embla-carousel-react 8.6.0**: Lightweight carousel library
 - **react-icons 5.5.0**: Comprehensive icon library
 
 ### Development Tools
