@@ -53,13 +53,11 @@ const O2PlantsSection = () => {
         <div className="relative inline-block">
           <h2 className="text-header">Our Best o2</h2>
 
-          {/* Bottom-right curved corner */}
           <span
             className="absolute -bottom-1 -right-1 w-10 h-10 
             border-b-2 border-r-2 border-[#55B000] rounded-br-xl"
           ></span>
 
-          {/* Top-left curved corner */}
           <span
             className="absolute -top-1 -left-1 w-10 h-10 
             border-t-2 border-l-2 border-[#55B000] rounded-tl-xl"
@@ -83,10 +81,7 @@ const O2PlantsSection = () => {
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
             {/* CARD */}
-            <div
-              className="flex flex-col md:flex-row card-glass items-center rounded-[92px] border-3 overflow-visible lg:max-h-[630px]"
-            >
-              {/* LEFT IMAGE */}
+            <div className="flex flex-col md:flex-row card-glass items-center rounded-[92px] border-3 overflow-visible lg:max-h-[630px]">
               <div className="flex justify-center w-full overflow-visible">
                 <img
                   src={slide.image}
@@ -95,11 +90,8 @@ const O2PlantsSection = () => {
                 />
               </div>
 
-              {/* RIGHT TEXT */}
               <div className="w-full space-y-4 px-10 -translate-y-20 lg:-translate-y-0">
-                <h3 className="text-title !font-semibold">
-                  {slide.title}
-                </h3>
+                <h3 className="text-title !font-semibold">{slide.title}</h3>
 
                 <p className="text-description !text-[28px] !font-semibold mt-10">
                   {slide.desc1}
@@ -108,14 +100,11 @@ const O2PlantsSection = () => {
                   {slide.desc2}
                 </p>
 
-                {/* BUTTON + ARROWS + COUNT */}
                 <div className="flex items-center justify-between">
-                  {/* Button */}
                   <button className="px-8 py-3 border-2 border-white rounded-[12px] hover:bg-white/10 text-description !text-[28px] opacity-75">
                     Explore
                   </button>
 
-                  {/* Arrows + Count */}
                   <div className="flex items-center gap-5 text-white/80">
                     {/* LEFT ARROW */}
                     <button
@@ -128,7 +117,9 @@ const O2PlantsSection = () => {
                     </button>
 
                     {/* COUNT */}
-                    <span className="text-description !text-[20px] !font-bold hover:text-white cursor-pointer">{slide.count}</span>
+                    <span className="text-description !text-[20px] !font-bold hover:text-white cursor-pointer">
+                      {slide.count}
+                    </span>
 
                     {/* RIGHT ARROW */}
                     <button
@@ -147,7 +138,7 @@ const O2PlantsSection = () => {
         ))}
       </Swiper>
 
-      {/* PAGINATION DOTS */}
+      {/* DOTS */}
       <div className="o2-pagination flex justify-center mt-8"></div>
     </section>
   );

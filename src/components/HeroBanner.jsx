@@ -1,13 +1,9 @@
 import React from "react";
 import bg from "../assets/bg.jpg";
 import profile4 from "../assets/profile4.png";
-
 import plant1 from "../assets/first.png";
 import plant2 from "../assets/second.png";
-import plant3 from "../assets/third.png";
-import plant4 from "../assets/fourth.png";
-import plant5 from "../assets/fifth.png";
-import plant6 from "../assets/sixth.png";
+import plant3 from "../assets/seven.png";
 
 import { FiShoppingBag, FiChevronRight } from "react-icons/fi";
 import { FaPlay } from "react-icons/fa";
@@ -38,13 +34,11 @@ const SmallTestimonial = () => (
 
 const RightTopPlantCard = () => (
   <div className="relative rounded-[40px] max-w-[500px] ml-auto card-glass pt-20 pb-10 text-white/90 overflow-visible border-2 border-white/20">
-    {/* Floating Plant Image */}
     <img
       src={plant1}
       alt="plant"
       className="absolute -top-30 left-1/2 -translate-x-1/2 w-[459px] h-[459px] object-contain"
     />
-
     {/* CONTENT */}
     <div className="mt-65 px-15 flex justify-between items-center gap-3">
       <div className="items-center">
@@ -69,48 +63,48 @@ const RightTopPlantCard = () => (
   </div>
 );
 
-const GlassCard = ({ image, title, desc, price, imageOnRight = false }) => {
+const TrendyPlants = ({ image, title, desc, price, imageOnRight = false }) => {
   return (
-    <div className="relative rounded-[48px] card-glass p-8 overflow-hidden flex items-center gap-6 max-w-full">
-      {/* image */}
-      {!imageOnRight && (
-        <div className="w-1/2 min-w-[240px] flex justify-center">
-          <img
-            src={image}
-            alt={title}
-            className="w-[220px] h-[220px] object-contain -mt-6"
-          />
-        </div>
-      )}
+    <div className="relative rounded-[151px] card-glass p-16 overflow-visible  min-h-[450px]">
+      <img
+        src={image}
+        alt={title}
+        className={`
+          absolute top-1/2 -translate-y-6/10
+          ${imageOnRight ? "right-[0px]" : ""}
+          w-[280px] h-[320px] md:w-[601px] md:h-[732px]
+          object-contain pointer-events-none
+        `}
+      />
 
-      {/* content */}
-      <div className="flex-1 pr-2">
-        <h3 className="text-[24px] font-semibold text-white/90 mb-3">
-          {title}
-        </h3>
-        <p className="text-[15px] text-white/70 leading-relaxed mb-6">{desc}</p>
+      {/* CONTENT BLOCK */}
+      <div
+        className={`
+          py-auto relative z-10 flex flex-col gap-5
+          ${imageOnRight ? "mr-auto" : "ml-auto"}
+          w-full max-w-[420px] md:max-w-[720px]
+        `}
+      >
+        <h3 className="text-title !font-semibold !text-white">{title}</h3>
 
-        <div className="flex items-center gap-4">
-          <p className="text-[20px] font-semibold text-white">{price}</p>
-          <button className="px-4 py-2 border border-white/30 rounded-md hover:bg-white/10 text-[14px]">
+        <p className="text-title !text-[20px] !font-semibold !text-white">
+          {desc}
+        </p>
+
+        <p className="text-[22px] md:text-[26px] font-semibold text-white">
+          {price}
+        </p>
+
+        <div className="flex items-center gap-4 mt-2">
+          <button className="px-5 py-2 border-2 border-white rounded-[12px] text-title !text-[28px] !font-medium hover:bg-white/10 transition">
             Explore
           </button>
-          <button className="p-2 border border-white/30 rounded-md hover:bg-white/10">
-            <FiShoppingBag />
+
+          <button className="p-3 border border-white/40 rounded-xl hover:bg-white/10">
+            <FiShoppingBag size={20} />
           </button>
         </div>
       </div>
-
-      {/* right image */}
-      {imageOnRight && (
-        <div className="w-1/2 min-w-[220px] flex justify-center">
-          <img
-            src={image}
-            alt={title}
-            className="w-[200px] h-[200px] object-contain -mt-6"
-          />
-        </div>
-      )}
     </div>
   );
 };
@@ -120,18 +114,18 @@ const HeroSection = () => {
     <section className="relative overflow-hidden">
       {/* background image */}
       <div
-        className="absolute inset-0 bg-center bg-cover -z-10"
+        className="absolute inset-0 bg-center bg-contain bg-no-repeat -z-10"
         style={{
           backgroundImage: `url(${bg})`,
+          backgroundSize: "100% auto",
         }}
       >
-        {/* overlay tint */}
-        <div className="absolute inset-0 bg-[#0f1912]/60 -z-10" />
+        <div className="absolute inset-0 -z-10" />
       </div>
 
       <div className="px-4 md:px-6 lg:px-10 py-16">
         <div className="relative">
-          {/* top row: heading left, right floating card */}
+          {/* Top  */}
           <div className="flex flex-col lg:flex-row items-start justify-between gap-8">
             {/* left content */}
             <div className="flex-3 md:mt-20 ">
@@ -158,30 +152,28 @@ const HeroSection = () => {
                 </div>
               </div>
 
-              {/* small floating testimonial to the lower-left of the heading */}
-              <div className="md:mt-30">
+              {/* testimonial card */}
+              <div className="md:mt-50">
                 <SmallTestimonial />
               </div>
             </div>
 
-            {/* right floating plant card */}
+            {/* right content card */}
             <div className="flex-2 md:mt-20">
               <RightTopPlantCard />
             </div>
           </div>
 
-          {/* Our Trendy plants title (centered) */}
-          <div className="w-full flex justify-center mb-12">
+          {/* Our Trendy plants */}
+          <div className="w-full flex justify-center mt-20 mb-12">
             <div className="relative inline-block">
               <h2 className="text-header">Our Trenday plants</h2>
 
-              {/* Bottom-right curved corner */}
               <span
                 className="absolute -bottom-1 -right-1 w-10 h-10 
             border-b-2 border-r-2 border-[#55B000] rounded-br-xl"
               ></span>
 
-              {/* Top-left curved corner */}
               <span
                 className="absolute -top-1 -left-1 w-10 h-10 
             border-t-2 border-l-2 border-[#55B000] rounded-tl-xl"
@@ -189,10 +181,9 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* two big rounded glass cards stacked */}
-          <div className="flex flex-col gap-10">
-            <div className="mx-auto w-full max-w-[1100px]">
-              <GlassCard
+          <div className="flex flex-col gap-30">
+            <div className="mx-auto w-full">
+              <TrendyPlants
                 image={plant2}
                 title="For Your Desks Decorations"
                 desc="I recently added a beautiful desk decoration plant to my workspace, and it has made such a positive difference!"
@@ -201,8 +192,8 @@ const HeroSection = () => {
               />
             </div>
 
-            <div className="mx-auto w-full max-w-[1100px]">
-              <GlassCard
+            <div className="mx-auto w-full ">
+              <TrendyPlants
                 image={plant3}
                 title="For Your Desks Decorations"
                 desc="The greenery adds a touch of nature and serenity to my desk, making it feel more inviting and calming."

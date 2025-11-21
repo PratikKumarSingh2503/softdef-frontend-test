@@ -1,6 +1,5 @@
 import React from "react";
 import logo from "../assets/logo.png";
-import Button from "./Button";
 
 const Footer = () => (
   <footer className="my-10 px-4 py-10 text-white md:px-6 lg:px-10">
@@ -57,7 +56,7 @@ const Footer = () => (
         </div>
       </div>
     </div>
-    <div className="flex flex-col mx-auto mt-15 text-center items-center justify-between lg:flex">
+    <div className="flex flex-col mx-auto mt-15 text-center items-center justify-between md:flex-row">
       <div className="flex items-center gap-4 text-[28px] font-extrabold">
         <span>FB</span>
         <span>TW</span>

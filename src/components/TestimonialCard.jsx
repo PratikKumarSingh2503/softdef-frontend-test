@@ -33,14 +33,10 @@ const TestimonialCard = () => {
       {/* TITLE */}
       <div className="w-full flex justify-center mb-12">
         <div className="relative inline-block">
-          <h2 className="text-header">
-            Customer Review
-          </h2>
+          <h2 className="text-header">Customer Review</h2>
 
-          {/* Bottom-right arc */}
           <span className="absolute -bottom-1 -right-2 w-8 h-8 border-b-2 border-r-2 border-[#D4FF65] rounded-br-xl"></span>
 
-          {/* Top-left arc */}
           <span className="absolute -top-1 -left-2 w-8 h-8 border-t-2 border-l-2 border-[#D4FF65] rounded-tl-xl"></span>
         </div>
       </div>
@@ -52,7 +48,6 @@ const TestimonialCard = () => {
             key={index}
             className="rounded-[77px] card-glass p-10 text-white"
           >
-            {/* PROFILE + NAME + STARS */}
             <div className="flex items-center gap-4 mb-4">
               <img
                 src={item.img}
@@ -64,17 +59,13 @@ const TestimonialCard = () => {
                   {item.name}
                 </h3>
 
-                {/* Stars */}
                 <p className="text-white/75 text-[24px] font-regular">
                   {"★".repeat(item.stars)}
                 </p>
               </div>
             </div>
 
-            {/* REVIEW TEXT */}
-            <p className="mt-10 text-description">
-              {item.review}
-            </p>
+            <p className="mt-10 text-description">{item.review}</p>
           </div>
         ))}
       </div>
@@ -83,12 +74,3 @@ const TestimonialCard = () => {
 };
 
 export default TestimonialCard;
-
-//         <div
-//           key={index}
-//           className="
-//   relative rounded-[40px] border border-white/10 bg-white/5 backdrop-blur-xl p-8 text-white/80
-//   before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-6
-//   before:border-t before:border-white/10 before:rounded-[60%_60%_0_0]
-// "
-//         >
