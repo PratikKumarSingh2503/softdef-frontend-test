@@ -33,7 +33,7 @@ const TestimonialCard = () => {
       {/* TITLE */}
       <div className="w-full flex justify-center mb-12">
         <div className="relative inline-block">
-          <h2 className="text-[48px] text-white font-semibold">
+          <h2 className="text-header">
             Customer Review
           </h2>
 
@@ -48,38 +48,31 @@ const TestimonialCard = () => {
       {/* 3-CARD GRID */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {reviews.map((item, index) => (
-  <div
-  key={index}
-  className="
-    relative rounded-[40px] border border-white/10 bg-white/5 backdrop-blur-xl p-8 text-white/80
-    before:content-[''] before:absolute before:top-0 before:left-0
-    before:w-full before:h-8
-    before:rounded-b-[100%]
-    before:border-t before:border-white/10
-  "
->
-
+          <div
+            key={index}
+            className="rounded-[77px] card-glass p-10 text-white"
+          >
             {/* PROFILE + NAME + STARS */}
             <div className="flex items-center gap-4 mb-4">
               <img
                 src={item.img}
                 alt={item.name}
-                className="w-14 h-14 rounded-full object-cover"
+                className="w-[88px] h-[88px] rounded-[51px] object-cover"
               />
               <div>
-                <h3 className="text-white font-semibold text-[38px]">
+                <h3 className="text-title !text-white !font-semibold">
                   {item.name}
                 </h3>
 
                 {/* Stars */}
-                <p className="text-white/75 text-[19px] font-regular">
+                <p className="text-white/75 text-[24px] font-regular">
                   {"★".repeat(item.stars)}
                 </p>
               </div>
             </div>
 
             {/* REVIEW TEXT */}
-            <p className="leading-relaxed text-[24px] font-regular">
+            <p className="mt-10 text-description">
               {item.review}
             </p>
           </div>
@@ -91,12 +84,11 @@ const TestimonialCard = () => {
 
 export default TestimonialCard;
 
-
 //         <div
-  //           key={index}
-  //           className="
-  //   relative rounded-[40px] border border-white/10 bg-white/5 backdrop-blur-xl p-8 text-white/80
-  //   before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-6
-  //   before:border-t before:border-white/10 before:rounded-[60%_60%_0_0]
-  // "
-  //         >
+//           key={index}
+//           className="
+//   relative rounded-[40px] border border-white/10 bg-white/5 backdrop-blur-xl p-8 text-white/80
+//   before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-6
+//   before:border-t before:border-white/10 before:rounded-[60%_60%_0_0]
+// "
+//         >

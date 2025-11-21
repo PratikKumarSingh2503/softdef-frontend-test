@@ -4,24 +4,24 @@ import Button from "./Button";
 
 const Footer = () => (
   <footer className="my-10 px-4 py-10 text-white md:px-6 lg:px-10">
-    <div className="items-start justify-between md:flex lg:flex">
-      <div className="space-y-4">
+    <div className="flex flex-col gap-10 items-start justify-between lg:flex-row ">
+      <div className="">
         <div className="flex items-center gap-3">
           <img src={logo} alt="Logo" className="h-[94px] w-[94px]" />
-          <div className="hidden text-[45px] font-black sm:block">
+          <div className="hidden text-header !text-[45px] !font-black sm:block">
             FloraVision.
           </div>
         </div>
-        <p className="text-[28px] font-medium leading-">
+        <p className="mt-5 text-description !text-[28px] !font-medium !text-white">
           "From lush indoor greens to vibrant
           <br /> outdoor blooms, our plants are crafted to
-          <br /> thrive and elevate your living environment"
+          <br /> thrive and elevate your living environment."
         </p>
       </div>
 
-      <div className="space-y-3">
-        <p className="text-[28px] font-extrabold">Quick Link&apos;s</p>
-        <nav className="flex flex-col gap-6 text-[24px] font-medium underline decoration-solid">
+      <div className="">
+        <p className="text-header !text-[28px] !font-extrabold">Quick Link&apos;s</p>
+        <nav className="mt-10 flex flex-col gap-6 text-description !font-medium underline decoration-solid">
           <a className="" href="#home">
             Home
           </a>
@@ -37,9 +37,9 @@ const Footer = () => (
         </nav>
       </div>
 
-      <div className="space-y-3">
-        <p className="text-[28px] font-extrabold ">For Every Update.</p>
-        <div className="flex gap-3 rounded-sm border border-white bg-[#111d16]/70 p-1">
+      <div className="">
+        <p className="text-header !text-[28px] !font-extrabold">For Every Update.</p>
+        <div className="mt-10 flex gap-3 rounded-sm border border-white bg-[#111d16]/70 p-1">
           <input
             type="email"
             placeholder="Enter Email"
@@ -60,7 +60,9 @@ const Footer = () => (
         <span>TW</span>
         <span>LI</span>
       </div>
-      <div className="text-[24px] font-medium">FloraVision © all right reserve</div>
+      <div className="text-[24px] font-medium">
+        FloraVision © all right reserve
+      </div>
     </div>
   </footer>
 );

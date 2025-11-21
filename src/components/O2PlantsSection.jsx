@@ -1,13 +1,10 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay, EffectFade } from "swiper/modules";
-
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
-
 import heroTrendOne from "../assets/first.png";
 import heroTrendTwo from "../assets/second.png";
-import topThird from "../assets/third.png";
 
 const O2PlantsSection = () => {
   const slides = [
@@ -35,7 +32,7 @@ const O2PlantsSection = () => {
         "Oxygen-producing plants, often referred to as O2 plants, are those that release oxygen into the atmosphere through the process of photosynthesis.",
       desc2:
         "Many plants can help filter out pollutants and toxins from the air, such as formaldehyde, benzene, and trichloroethylene. This makes the air cleaner and healthier to breathe.",
-      image: topThird,
+      image: heroTrendOne,
       count: "03/04",
     },
     {
@@ -44,7 +41,7 @@ const O2PlantsSection = () => {
         "Oxygen-producing plants, often referred to as O2 plants, are those that release oxygen into the atmosphere through the process of photosynthesis.",
       desc2:
         "Many plants can help filter out pollutants and toxins from the air, such as formaldehyde, benzene, and trichloroethylene. This makes the air cleaner and healthier to breathe.",
-      image: heroTrendOne,
+      image: heroTrendTwo,
       count: "04/04",
     },
   ];
@@ -54,7 +51,7 @@ const O2PlantsSection = () => {
       {/* TITLE */}
       <div className="w-full flex justify-center mb-12">
         <div className="relative inline-block">
-          <h2 className="text-[55px] font-semibold text-white">Our Best o2</h2>
+          <h2 className="text-header">Our Best o2</h2>
 
           {/* Bottom-right curved corner */}
           <span
@@ -87,37 +84,34 @@ const O2PlantsSection = () => {
           <SwiperSlide key={index}>
             {/* CARD */}
             <div
-              className="flex flex-col md:flex-row items-center gap-10
-              rounded-[92px] border border-white/10 bg-card
-              backdrop-blur-xl relative overflow-visible"
+              className="flex flex-col md:flex-row card-glass items-center rounded-[92px] border-3 overflow-visible lg:max-h-[630px]"
             >
               {/* LEFT IMAGE */}
-              <div className="relative flex justify-center w-full md:w-1/2 overflow-visible">
+              <div className="flex justify-center w-full overflow-visible">
                 <img
                   src={slide.image}
                   alt="plant"
-                  className="w-[380px] h-[380px] md:w-[560px] md:h-[560px]
-                  -mt-20 object-contain"
+                  className="w-[577px] h-[577px] lg:w-[877px] lg:h-[877px] object-contain -translate-y-20"
                 />
               </div>
 
               {/* RIGHT TEXT */}
-              <div className="w-full md:w-1/2 space-y-4 py-10 pr-10">
-                <h3 className="text-white/75 text-[32px] font-semibold">
+              <div className="w-full space-y-4 px-10 -translate-y-20 lg:-translate-y-0">
+                <h3 className="text-title !font-semibold">
                   {slide.title}
                 </h3>
 
-                <p className="text-white/75 text-[22px] font-semibold">
+                <p className="text-description !text-[28px] !font-semibold mt-10">
                   {slide.desc1}
                 </p>
-                <p className="text-white/75 text-[22px] font-semibold">
+                <p className="text-description !text-[28px] !font-semibold mt-10">
                   {slide.desc2}
                 </p>
 
                 {/* BUTTON + ARROWS + COUNT */}
                 <div className="flex items-center justify-between">
                   {/* Button */}
-                  <button className="px-6 py-2 border-2 border-white rounded-md hover:bg-white/10 text-[12px]">
+                  <button className="px-8 py-3 border-2 border-white rounded-[12px] hover:bg-white/10 text-description !text-[28px] opacity-75">
                     Explore
                   </button>
 
@@ -128,20 +122,20 @@ const O2PlantsSection = () => {
                       onClick={() =>
                         document.querySelector(".swiper").swiper.slidePrev()
                       }
-                      className="text-xl font-bold hover:text-white cursor-pointer"
+                      className="text-[24px] font-bold hover:text-white cursor-pointer"
                     >
                       &lt;
                     </button>
 
                     {/* COUNT */}
-                    <span className="text-white/80">{slide.count}</span>
+                    <span className="text-description !text-[20px] !font-bold hover:text-white cursor-pointer">{slide.count}</span>
 
                     {/* RIGHT ARROW */}
                     <button
                       onClick={() =>
                         document.querySelector(".swiper").swiper.slideNext()
                       }
-                      className="text-xl font-bold hover:text-white cursor-pointer"
+                      className="text-[24px] font-bold hover:text-white cursor-pointer"
                     >
                       &gt;
                     </button>

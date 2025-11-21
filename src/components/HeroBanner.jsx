@@ -11,7 +11,7 @@ const HeroBanner = () => (
       <div className="absolute inset-0 bg-gradient-to-r from-[#060806]/90 via-[#060806]/70 to-transparent" />
     </div>
 
-    <div className="relative mx-auto flex max-w-6xl flex-col gap-10 px-4 py-20 md:flex-row md:items-center md:px-6 lg:px-0 lg:py-24">
+    <div className="relative mx-auto flex flex-col gap-10 px-4 py-20 md:flex-row md:items-center md:px-6 lg:px-0 lg:py-24">
       <div className="space-y-6 text-white md:flex-1">
         <p className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1 text-xs uppercase tracking-[0.3em] text-white/70">
           FloraVision

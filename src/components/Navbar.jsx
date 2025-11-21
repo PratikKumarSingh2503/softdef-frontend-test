@@ -9,7 +9,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-40 backdrop-blur-xl">
+    <header className="">
       <nav className="mx-auto flex items-center justify-between px-4 py-5 md:px-6 lg:px-10">
         {/* Logo */}
         <div className="flex items-center gap-3">
