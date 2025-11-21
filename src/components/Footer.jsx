@@ -20,7 +20,9 @@ const Footer = () => (
       </div>
 
       <div className="">
-        <p className="text-header !text-[28px] !font-extrabold">Quick Link&apos;s</p>
+        <p className="text-header !text-[28px] !font-extrabold">
+          Quick Link&apos;s
+        </p>
         <nav className="mt-10 flex flex-col gap-6 text-description !font-medium underline decoration-solid">
           <a className="" href="#home">
             Home
@@ -37,24 +39,25 @@ const Footer = () => (
         </nav>
       </div>
 
-      <div className="">
-        <p className="text-header !text-[28px] !font-extrabold">For Every Update.</p>
-        <div className="mt-10 flex gap-3 rounded-sm border border-white bg-[#111d16]/70 p-1">
+      <div className="mt-10">
+        <p className="text-header !text-[28px] !font-extrabold">
+          For Every Update.
+        </p>
+
+        <div className="mt-8 flex flex-col sm:flex-row gap-3 border-2 border-white rounded-[8px] p-1">
           <input
             type="email"
             placeholder="Enter Email"
-            className="flex-1 bg-transparent px-4 text-[24px] text-white placeholder:text-white/40 focus:outline-none"
+            className="bg-transparent pl-2 text-[24px] text-white placeholder:text-white/75 focus:outline-none"
           />
-          <Button
-            size="sm"
-            className="text-[22px] font-bold rounded-sm px-6 bg-white uppercase"
-          >
+
+          <button className="px-6 py-2 bg-white text-black font-bold text-[22px] rounded-md">
             Subscribe
-          </Button>
+          </button>
         </div>
       </div>
     </div>
-    <div className="flex mx-auto mt-15 text-center items-center justify-between">
+    <div className="flex flex-col mx-auto mt-15 text-center items-center justify-between lg:flex">
       <div className="flex items-center gap-4 text-[28px] font-extrabold">
         <span>FB</span>
         <span>TW</span>

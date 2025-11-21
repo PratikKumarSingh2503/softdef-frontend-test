@@ -1,87 +1,220 @@
-import heroMain from '../assets/bg.jpg'
-import highlightPlant from '../assets/first.png'
-import oxygenPlant from '../assets/95e728282f4fb901ee2edc80783c2fbd7df490c2.png'
-import Button from './Button'
-import SectionTitle from './SectionTitle'
+import React from "react";
+import bg from "../assets/bg.jpg";
+import profile4 from "../assets/profile4.png";
 
-const HeroBanner = () => (
-  <section className="relative isolate overflow-hidden bg-gradient-to-b from-[#0e1510] to-[#141f14]">
-    <div className="absolute inset-0 opacity-60">
-      <img src={heroMain} alt="Hero backdrop" className="h-full w-full object-cover" loading="lazy" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#060806]/90 via-[#060806]/70 to-transparent" />
-    </div>
+import plant1 from "../assets/first.png";
+import plant2 from "../assets/second.png";
+import plant3 from "../assets/third.png";
+import plant4 from "../assets/fourth.png";
+import plant5 from "../assets/fifth.png";
+import plant6 from "../assets/sixth.png";
 
-    <div className="relative mx-auto flex flex-col gap-10 px-4 py-20 md:flex-row md:items-center md:px-6 lg:px-0 lg:py-24">
-      <div className="space-y-6 text-white md:flex-1">
-        <p className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1 text-xs uppercase tracking-[0.3em] text-white/70">
-          FloraVision
-          <span className="h-1 w-1 rounded-full bg-[#c8ff4f]" />
-          since 2016
-        </p>
-        <h1 className="text-4xl font-semibold leading-tight text-white md:text-5xl lg:text-[56px]">
-          Earth&apos;s Exhale
-        </h1>
-        <p className="max-w-xl text-base text-white/70 md:text-lg">
-          Earth Exhale symbolizes the purity and vitality of the Earth&apos;s natural environment and its essential role
-          in sustaining life.
-        </p>
-        <div className="flex flex-wrap items-center gap-4">
-          <Button size="lg">Buy Now</Button>
-          <Button size="lg" variant="ghost" className="gap-2">
-            <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/30">
-              ▶
-            </span>
-            Live Demo
-          </Button>
-        </div>
-        <div className="flex items-center gap-4 rounded-3xl border border-white/5 bg-[#111d16]/70 p-4 backdrop-blur">
-          <div className="h-12 w-12 overflow-hidden rounded-2xl border border-white/10">
-            <img src={highlightPlant} alt="Ronnie Hamill" className="h-full w-full object-cover" loading="lazy" />
-          </div>
-          <div className="text-sm text-white/80">
-            <p className="font-semibold">Ronnie Hamill</p>
-            <p className="text-white/60">“They bring such a fresh and vibrant energy to my home.”</p>
+import { FiShoppingBag, FiChevronRight } from "react-icons/fi";
+import { FaPlay } from "react-icons/fa";
+
+const SmallTestimonial = () => (
+  <div className="relative w-[300px] px-5 py-10 rounded-[45px] card-glass text-white/90 md:w-[409px]">
+    <div className="flex flex-col items-start gap-3">
+      <div className="flex justify-start items-center gap-4">
+        <img
+          src={profile4}
+          alt="user"
+          className="w-[64px] h-[64px] rounded-[86px] object-cover"
+        />
+        <div>
+          <div className="flex flex-col items-center gap-2">
+            <p className="text-sm font-semibold">Ronnie Hamill</p>
+            <div className="text-yellow-400">★★★★★</div>
           </div>
         </div>
       </div>
+      <p className="text-description !text-[17px] mt-2">
+        I can't express how thrilled I am with my new natural plants! They bring
+        such a fresh and vibrant energy to my home.
+      </p>
+    </div>
+  </div>
+);
 
-      <div className="w-full max-w-md self-center rounded-[3rem] border border-white/10 bg-[#111d16]/70 p-8 text-white shadow-[var(--shadow-flora-card)] ring-1 ring-white/5 backdrop-blur">
-        <div className="flex items-center justify-between text-sm text-white/60">
-          <span>Indoor Plant</span>
-          <div className="flex items-center gap-1 text-white">
-            <span className="text-lg text-[#c8ff4f]">●</span>
-            Aglaonema
-          </div>
+const RightTopPlantCard = () => (
+  <div className="relative rounded-[40px] max-w-[500px] ml-auto card-glass pt-20 pb-10 text-white/90 overflow-visible border-2 border-white/20">
+    {/* Floating Plant Image */}
+    <img
+      src={plant1}
+      alt="plant"
+      className="absolute -top-30 left-1/2 -translate-x-1/2 w-[459px] h-[459px] object-contain"
+    />
+
+    {/* CONTENT */}
+    <div className="mt-65 px-15 flex justify-between items-center gap-3">
+      <div className="items-center">
+        <p className="text-description !text-[23px]">Indoor Plant</p>
+
+        <h3 className="mt-2 text-description !text-[38px]">Aglaonema plant</h3>
+
+        <button className="mt-6 border-2 border-white/40 px-6 py-2 rounded-[12px] text-description !text-[28px] hover:bg-white/10 transition">
+          Buy Now
+        </button>
+      </div>
+      <div className="text-white/70">
+        <FiChevronRight size={22} />
+      </div>
+    </div>
+
+    <div className="flex items-center justify-center gap-2 mt-8">
+      <span className="w-2 h-2 rounded-full bg-white/90"></span>
+      <span className="w-2 h-2 rounded-full bg-white/30"></span>
+      <span className="w-2 h-2 rounded-full bg-white/30"></span>
+    </div>
+  </div>
+);
+
+const GlassCard = ({ image, title, desc, price, imageOnRight = false }) => {
+  return (
+    <div className="relative rounded-[48px] card-glass p-8 overflow-hidden flex items-center gap-6 max-w-full">
+      {/* image */}
+      {!imageOnRight && (
+        <div className="w-1/2 min-w-[240px] flex justify-center">
+          <img
+            src={image}
+            alt={title}
+            className="w-[220px] h-[220px] object-contain -mt-6"
+          />
         </div>
-        <div className="relative mt-4 flex flex-col gap-6 text-center">
-          <div className="relative flex items-center justify-center">
-            <div className="absolute inset-0 rounded-[2.5rem] bg-gradient-to-b from-white/5 to-transparent blur-3xl" />
-            <img
-              src={highlightPlant}
-              alt="Aglaonema plant"
-              className="relative z-10 mx-auto h-64 w-auto object-contain drop-shadow-[0_45px_80px_rgba(0,0,0,0.8)]"
-              loading="lazy"
-            />
-          </div>
-          <div className="space-y-2">
-            <h3 className="text-2xl font-semibold">Aglaonema plant</h3>
-            <p className="text-sm text-white/70">
-              Known for its lush foliage and ease of care, perfect for your calming desk setup.
-            </p>
-          </div>
-          <div className="flex items-center justify-between rounded-full border border-white/10 bg-[#0c120d] px-5 py-3 text-sm">
-            <div className="text-left">
-              <p className="text-white/60">Rs.</p>
-              <p className="text-2xl font-semibold text-white">599/-</p>
+      )}
+
+      {/* content */}
+      <div className="flex-1 pr-2">
+        <h3 className="text-[24px] font-semibold text-white/90 mb-3">
+          {title}
+        </h3>
+        <p className="text-[15px] text-white/70 leading-relaxed mb-6">{desc}</p>
+
+        <div className="flex items-center gap-4">
+          <p className="text-[20px] font-semibold text-white">{price}</p>
+          <button className="px-4 py-2 border border-white/30 rounded-md hover:bg-white/10 text-[14px]">
+            Explore
+          </button>
+          <button className="p-2 border border-white/30 rounded-md hover:bg-white/10">
+            <FiShoppingBag />
+          </button>
+        </div>
+      </div>
+
+      {/* right image */}
+      {imageOnRight && (
+        <div className="w-1/2 min-w-[220px] flex justify-center">
+          <img
+            src={image}
+            alt={title}
+            className="w-[200px] h-[200px] object-contain -mt-6"
+          />
+        </div>
+      )}
+    </div>
+  );
+};
+
+const HeroSection = () => {
+  return (
+    <section className="relative overflow-hidden">
+      {/* background image */}
+      <div
+        className="absolute inset-0 bg-center bg-cover -z-10"
+        style={{
+          backgroundImage: `url(${bg})`,
+        }}
+      >
+        {/* overlay tint */}
+        <div className="absolute inset-0 bg-[#0f1912]/60 -z-10" />
+      </div>
+
+      <div className="px-4 md:px-6 lg:px-10 py-16">
+        <div className="relative">
+          {/* top row: heading left, right floating card */}
+          <div className="flex flex-col lg:flex-row items-start justify-between gap-8">
+            {/* left content */}
+            <div className="flex-3 md:mt-20 ">
+              <h1 className="text-header !text-[84px] !text-white/75 !lg:text-[118px]">
+                Earth's Exhale
+              </h1>
+
+              <p className="mt-4 text-description !text-[23px] !font-medium">
+                "Earth Exhale" symbolizes the purity and vitality of the Earth's
+                natural environment and its essential role in sustaining life.
+              </p>
+
+              <div className="mt-5 flex flex-col items-start gap-4 md:flex-row">
+                <button className=" border-2 border-white px-8 py-3 rounded-[12px] text-description !text-[28px] hover:bg-white/6 transition">
+                  Buy Now
+                </button>
+                <div className="flex items-center gap-3">
+                  <button className="flex items-center gap-3 bg-transparent border-2 border-white px-4 py-4 rounded-full text-white hover:bg-white/6 transition">
+                    <FaPlay className="opacity-75" />
+                  </button>
+                  <span className="text-description !text-[25px] font-indie !text-white">
+                    Live Demo
+                  </span>
+                </div>
+              </div>
+
+              {/* small floating testimonial to the lower-left of the heading */}
+              <div className="md:mt-30">
+                <SmallTestimonial />
+              </div>
             </div>
-            <Button size="sm" className="rounded-2xl px-6 py-2">
-              Buy Now
-            </Button>
+
+            {/* right floating plant card */}
+            <div className="flex-2 md:mt-20">
+              <RightTopPlantCard />
+            </div>
+          </div>
+
+          {/* Our Trendy plants title (centered) */}
+          <div className="w-full flex justify-center mb-12">
+            <div className="relative inline-block">
+              <h2 className="text-header">Our Trenday plants</h2>
+
+              {/* Bottom-right curved corner */}
+              <span
+                className="absolute -bottom-1 -right-1 w-10 h-10 
+            border-b-2 border-r-2 border-[#55B000] rounded-br-xl"
+              ></span>
+
+              {/* Top-left curved corner */}
+              <span
+                className="absolute -top-1 -left-1 w-10 h-10 
+            border-t-2 border-l-2 border-[#55B000] rounded-tl-xl"
+              ></span>
+            </div>
+          </div>
+
+          {/* two big rounded glass cards stacked */}
+          <div className="flex flex-col gap-10">
+            <div className="mx-auto w-full max-w-[1100px]">
+              <GlassCard
+                image={plant2}
+                title="For Your Desks Decorations"
+                desc="I recently added a beautiful desk decoration plant to my workspace, and it has made such a positive difference!"
+                price="Rs. 599/-"
+                imageOnRight={false}
+              />
+            </div>
+
+            <div className="mx-auto w-full max-w-[1100px]">
+              <GlassCard
+                image={plant3}
+                title="For Your Desks Decorations"
+                desc="The greenery adds a touch of nature and serenity to my desk, making it feel more inviting and calming."
+                price="Rs. 399/-"
+                imageOnRight={true}
+              />
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-)
+    </section>
+  );
+};
 
-export default HeroBanner
+export default HeroSection;

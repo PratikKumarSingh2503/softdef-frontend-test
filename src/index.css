@@ -17,7 +17,7 @@
 
 /* Card background */
 .card-glass {
-  border: 2px solid rgba(255, 255, 255, 1);
+  border: 2px solid transparent;
   border-image-source: linear-gradient(
     147.93deg,
     rgba(255, 255, 255, 0.2) ,
@@ -57,7 +57,6 @@
   letter-spacing: 0;
   color: rgba(255, 255, 255, 0.75);
 }
-
 
 
 .swiper,
