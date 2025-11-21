@@ -114,14 +114,11 @@ const HeroSection = () => {
     <section className="relative overflow-hidden">
       {/* background image */}
       <div
-        className="absolute inset-0 bg-center bg-contain bg-no-repeat -z-10"
+        className="absolute inset-0 bg-center bg-cover -z-20"
         style={{
           backgroundImage: `url(${bg})`,
-          backgroundSize: "100% auto",
         }}
-      >
-        <div className="absolute inset-0 -z-10" />
-      </div>
+      ></div>
 
       <div className="px-4 md:px-6 lg:px-10 py-16">
         <div className="relative">
