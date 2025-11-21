@@ -9,7 +9,6 @@ const App = () => (
   <div className="min-h-screen">
     <Navbar />
     <HeroBanner />
-    {/* <TrendingPlantsSection /> */}
     <PlantCard />
     <TestimonialsCard />
     <O2PlantsSection />
